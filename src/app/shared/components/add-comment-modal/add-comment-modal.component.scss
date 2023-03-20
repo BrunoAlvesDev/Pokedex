@@ -1,0 +1,44 @@
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color: #000000, $alpha: 0.75);
+
+  .modal {
+    width: 40vw;
+    padding: 20px;
+    background-color: #d6d6d6;
+    border-radius: 12px;
+    box-sizing: border-box;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+
+      .close img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
+    .body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .row {
+        .label {
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: end;
+      margin-top: 10px;
+    }
+  }
+}

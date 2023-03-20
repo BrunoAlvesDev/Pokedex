@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="modal">
+    <div class="header">
+      <h3>Adicionar comentário</h3>
+      <div class="close" (click)="close()">
+        <img src="assets/svg/close.svg" />
+      </div>
+    </div>
+    <div class="body">
+      <div class="row">
+        <p class="label">Nome</p>
+        <app-input></app-input>
+      </div>
+      <p class="label">Comentário</p>
+      <app-text-area></app-text-area>
+    </div>
+    <div class="footer">
+      <app-button text="Salvar"></app-button>
+    </div>
+  </div>
+</div>

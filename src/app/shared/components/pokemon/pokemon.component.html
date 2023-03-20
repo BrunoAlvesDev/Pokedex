@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="image">
+    <img
+      [src]="
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+        pokemonData.id +
+        '.png'
+      "
+      (click)="showDetails()"
+    />
+  </div>
+  <div class="details">
+    <div class="row">
+      <p class="name" (click)="showDetails()">{{ pokemonData.name }}</p>
+    </div>
+    <div class="row">
+      <div class="comments">
+        <div class="comment">
+          <p *ngIf="pokemonData.comments?.length == 0">
+            Ainda não há comentários
+          </p>
+        </div>
+      </div>
+      <div class="buttons">
+        <app-button
+          text="Adicionar comentário"
+          (click)="addComment()"
+        ></app-button>
+        <app-button text="Excluir comentário" color="danger"></app-button>
+      </div>
+    </div>
+  </div>
+  <div class="favorite">
+    <img
+      [src]="
+        pokemonData.favorite
+          ? 'assets/svg/favorite_filled.svg'
+          : 'assets/svg/favorite_empty.svg'
+      "
+      (click)="pokemonData.favorite = !pokemonData.favorite"
+    />
+  </div>
+</div>

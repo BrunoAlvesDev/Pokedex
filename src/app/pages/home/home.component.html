@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="header">
+    <img class="pokemon-logo" src="assets/img/pokemon_logo.png" />
+  </div>
+  <div class="search">
+    <app-input
+      placeHolder="Pesquise Pokémons"
+      (valueChange)="searchTerm = $event"
+    ></app-input>
+    <app-search-button (click)="searchPokemon()"></app-search-button>
+  </div>
+  <div class="pokemons">
+    <ng-container>
+      <app-pokemon
+        *ngFor="let pokemon of pokemonsShowPage"
+        [pokemonData]="pokemon"
+        (openAddCommentModal)="showAddCommentModal = true"
+        (openDetailsModal)="showDetailsModal = true"
+      ></app-pokemon>
+    </ng-container>
+  </div>
+  <div class="pagination">
+    <app-pagination
+      [startIndex]="pageStartIndex"
+      (startIndexChange)="populateShowPage($event)"
+    ></app-pagination>
+  </div>
+</div>
+<app-add-comment-modal
+  *ngIf="showAddCommentModal"
+  (closeEvent)="showAddCommentModal = false"
+></app-add-comment-modal>
+<app-details-modal
+  *ngIf="showDetailsModal"
+  (closeEvent)="showDetailsModal = false"
+></app-details-modal>

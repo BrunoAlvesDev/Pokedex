@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="bullet" (click)="goToPrevPage()">
+    <img src="assets/svg/prev.svg" />
+  </div>
+  <div
+    class="bullet background"
+    *ngFor="let page of pages"
+    [ngClass]="page == actualPageIndex ? 'selected' : ''"
+    (click)="goToPage(page)"
+  >
+    <p>{{ page }}</p>
+  </div>
+  <div class="bullet" (click)="goToNextPage()">
+    <img src="assets/svg/next.svg" />
+  </div>
+</div>

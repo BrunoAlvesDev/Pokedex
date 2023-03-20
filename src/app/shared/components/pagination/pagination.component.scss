@@ -1,0 +1,31 @@
+.container {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  .bullet {
+    width: 16px;
+    height: 20px;
+    padding: 3px 6px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  .background {
+    background-color: red;
+  }
+
+  .selected {
+    background-color: #be1a1a;
+  }
+}
